@@ -1,23 +1,57 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 import './App.css';
 
-function App() {
+const App = () => {
+  const handleScrollTo = (target) => {
+    scroll.scrollTo(target, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="sticky-navbar">
+        <nav >
+          <ul>
+              <li>
+                <ScrollLink to="home" smooth={true} offset={-95} duration={800}>
+                  Home
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="about" smooth={true} offset={-95} duration={800}>
+                  About
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="project" smooth={true} offset={-95} duration={800} >
+                  Project
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="contact" smooth={true} offset={-200} duration={800} >
+                  Contact
+                </ScrollLink>
+              </li>
+          </ul>
+        </nav>
+        <hr />
+      </div>
+    
+      <Home />
+
+      <About />
+
+      <Projects />
+
+      <Contact />
     </div>
   );
 }
