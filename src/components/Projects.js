@@ -1,14 +1,52 @@
 // components/Home.js
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 import '../component.css';
 
 const Projects = () => {
+
+  const data = [
+    { id: 1, name: 'Hehl', description: "A free to play online text-based dark fantasy game.", 
+    front: "https://github.com/ASOUDRY/Hehlma-Journey-of-Oil-and-Shadow",
+    back: "https://github.com/ASOUDRY/Hehl-Api"  },
+    { id: 2, name: 'Flumblr', 
+    description: "A mock social media application with features reminscent of a Twitter/Tumblr Hybrid", 
+    front: "https://github.com/ASOUDRY/Flumbr-Frontend",
+    back: "https://github.com/ASOUDRY/Flumblr-Backend"  },
+    { id: 3, name: 'D&D Colosseum', 
+    description: "A combat game based on the statistics used in the world's most popular RPGing game", 
+    front: "https://github.com/ASOUDRY/Soudry-P1-Frontend", 
+    back: "https://github.com/ASOUDRY/Soudry-P1-Backend" },
+  ];
+
+  const cardStyle = {
+    width: '300px',
+    height: '300px', 
+    margin: '20px'
+  };
+
+  const renderedCards = data.map((item) => (
+    <div key={item.id}>
+      <Card style={cardStyle}>
+        <Card.Body border="primary" style={{ maxHeight: '220px', overflow: 'hidden' }}>
+          <Card.Title>{item.name}</Card.Title>
+          <Card.Text>
+            {item.description}
+          </Card.Text>
+          <Button href={item.front} variant="primary">Link to Frontend code oncl</Button>
+          <Button variant="primary">Link to Backend code</Button>
+        </Card.Body>
+      </Card>
+    </div>
+  ));
   return (
     <div id="project" className="section">
       <h2>Projects</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Blandit volutpat maecenas volutpat blandit. Sit amet est placerat in egestas erat. Molestie nunc non blandit massa. Justo laoreet sit amet cursus sit amet dictum. Aliquam faucibus purus in massa tempor nec feugiat. In nibh mauris cursus mattis molestie a iaculis at. Arcu non sodales neque sodales ut etiam sit. Netus et malesuada fames ac turpis egestas integer eget aliquet. Vestibulum mattis ullamcorper velit sed. Urna duis convallis convallis tellus id interdum. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Dictum non consectetur a erat.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Blandit volutpat maecenas volutpat blandit. Sit amet est placerat in egestas erat. Molestie nunc non blandit massa. Justo laoreet sit amet cursus sit amet dictum. Aliquam faucibus purus in massa tempor nec feugiat. In nibh mauris cursus mattis molestie a iaculis at. Arcu non sodales neque sodales ut etiam sit. Netus et malesuada fames ac turpis egestas integer eget aliquet. Vestibulum mattis ullamcorper velit sed. Urna duis convallis convallis tellus id interdum. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Dictum non consectetur a erat.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Blandit volutpat maecenas volutpat blandit. Sit amet est placerat in egestas erat. Molestie nunc non blandit massa. Justo laoreet sit amet cursus sit amet dictum. Aliquam faucibus purus in massa tempor nec feugiat. In nibh mauris cursus mattis molestie a iaculis at. Arcu non sodales neque sodales ut etiam sit. Netus et malesuada fames ac turpis egestas integer eget aliquet. Vestibulum mattis ullamcorper velit sed. Urna duis convallis convallis tellus id interdum. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Dictum non consectetur a erat.</p>
+      <div className='projects'>
+        {renderedCards}
+      </div>
     </div>
   );
 };

@@ -70,7 +70,7 @@ const Navigation = () => {
             className={`nav-button ${activeSection === 'project' ? 'active' : ''}`}
             onClick={() => scrollToSection('project')}
           >
-            Project
+            Projects
           </button>
 
           <button
