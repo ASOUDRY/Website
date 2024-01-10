@@ -35,7 +35,7 @@ const Projects = () => {
           <Card.Text>
             {item.description}
           </Card.Text>
-          <Button href={item.front} variant="primary">Link to Frontend code oncl</Button>
+          <Button href={item.front} variant="primary">Link to Frontend code</Button>
           <Button variant="primary">Link to Backend code</Button>
         </Card.Body>
       </Card>
