@@ -8,7 +8,7 @@ const Contact = () => {
       <h2>Contact</h2>
       <ul>
         <li>Phone: 443-615-3229</li>
-        <li>Email: alexandersoudry@gmail.com</li>
+        <li>Email: alexandersoudry@gmail.com (Preferred Method of Contact)</li>
         <li> 
           <a href="https://www.linkedin.com/in/alexandersoudry/">https://www.linkedin.com/in/alexandersoudry</a>
         </li>
